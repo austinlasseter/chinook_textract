@@ -76,9 +76,18 @@ Exploring the Intertopic Distance Plot using `pyLDAvis` can help the user learn 
 A benchmark model will include 10 topics. Evaluation metrics (described in the next section) will be used to determine the optimal number of topics, compared to the benchmark model.
 
 ### Evaluation Metrics
-_(approx. 1-2 paragraphs)_
 
-In this section, propose at least one evaluation metric that can be used to quantify the performance of both the benchmark model and the solution model. The evaluation metric(s) you propose should be appropriate given the context of the data, the problem statement, and the intended solution. Describe how the evaluation metric(s) are derived and provide an example of their mathematical representations (if applicable). Complex evaluation metrics should be clearly defined and quantifiable (can be expressed in mathematical or logical terms).
+There are multiple ways to evaluate an LDA topic model, and there are also several metrics to choose from. 
+
+* Topic Coherence scores a single topic by measuring the degree of semantic similarity between high scoring words in the topic. These measurements help distinguish between topics that are semantically interpretable topics and topics that are artifacts of statistical inference.
+* Silhouette score: Silhouette analysis can be used to study the separation distance between the resulting clusters. The silhouette plot displays a measure of how close each point in one cluster is to points in the neighboring clusters and thus provides a way to assess parameters like number of clusters visually. This measure has a range of -1 to  1]. The silhouette analysis is used to choose an optimal value for the number of topic clusters. 
+* Classification performance: Label the documents by the topics learned in LDA, and run a multi-class SVM classifier on the data set. The SVM training accuracy is your evaluation. Typically, accuracy or the F1-score would be good metrics of classification performance.
+
+```
+from sklearn.metrics import silhouette_samples, silhouette_score
+silhouette_avg = silhouette_score(X, cluster_labels)
+sample_silhouette_values = silhouette_samples(X, cluster_labels)
+```
 
 ### Project Design
 _(approx. 1 page)_
