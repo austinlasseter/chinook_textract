@@ -97,9 +97,10 @@ silhouette_avg = silhouette_score(X, cluster_labels)
 sample_silhouette_values = silhouette_samples(X, cluster_labels)
 ```
 
-* Classification performance: Label the documents by the topics learned in LDA, and run a multi-class SVM classifier on the data set. The SVM training accuracy is your evaluation. Typically, accuracy or the F1-score would be good metrics of classification performance.
+* Classification performance: Label the documents by the topics learned in LDA, and run a multi-class SVM classifier on the data set. The SVM training accuracy is your evaluation. Typically, accuracy or the F1-score would be good metrics of classification performance; the `sklearn` library includes a good package for this purpose.
 
 ```
+# Compute multiclass classification metrics report
 from sklearn.metrics import classification_report
 print(classification_report(y_true, y_pred, target_names=target_names))
 ```
