@@ -73,6 +73,8 @@ Exploring the Intertopic Distance Plot using `pyLDAvis` can help the user learn 
 
 <img src="pylDavis.png" alt="pyLDAvis" width="500"/>
 
+A benchmark model will include 10 topics. Evaluation metrics (described in the next section) will be used to determine the optimal number of topics, compared to the benchmark model.
+
 ### Evaluation Metrics
 _(approx. 1-2 paragraphs)_
 
