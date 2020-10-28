@@ -67,6 +67,17 @@ In this final section, summarize a theoretical workflow for approaching a soluti
 
 ![](chinookflow.png)
 
+Steps in the process:
+* Extract the data from the PDFs
+* Organize the data into a pandas dataframe (with appropriate data cleaning)
+* Split the data into strata by size of obligation
+* Topic Modeling by strata
+* Time-series analysis: Topics by year
+* Time-series analysis: Trace a few key words by year
+
+Notes:
+* This is not labeled data
+
 
 -----------
 
