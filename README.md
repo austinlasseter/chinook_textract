@@ -46,9 +46,18 @@ Once the data has been extracted from the PDF's, it will be summarized in a pand
 
 
 ### Solution Statement
-_(approx. 1 paragraph)_
 
-In this section, clearly describe a solution to the problem. The solution should be applicable to the project domain and appropriate for the dataset(s) or input(s) given. Additionally, describe the solution thoroughly such that it is clear that the solution is quantifiable (the solution can be expressed in mathematical or logical terms) , measurable (the solution can be measured by some metric and clearly observed), and replicable (the solution can be reproduced and occurs more than once).
+The final product of the analysis will be a dashboard displaying the results of the topic-modeling and time-series analyses in graphic format. The dashboard will include a bubble graphic that allows users to quickly summarize the topic clusters by fiscal strata, clearly displaying the top words associated with each cluster, as well as the size of the cluster. In addition, the dashboard will include line charts displaying the trends of topic clusters and individual terms, over time. In this way, users can grasp a more useful summary of the J-Book topics than what is available from the PDFs. In addition, the dataset of extracted text and fiscal information will be available for additional analysis.
+
+Steps in the analytic process leading up to the solution:
+* Extract the data from the PDFs
+* Organize the data into a pandas dataframe (with appropriate data cleaning)
+* Split the data into strata by size of obligation
+* Modeling:
+  * Topic Modeling by strata
+  * Time-series analysis: Topics by year
+  * Time-series analysis: Trace a few key words by year
+* Visualize results in a dashboard
 
 ### Benchmark Model
 _(approximately 1-2 paragraphs)_
@@ -67,13 +76,7 @@ In this final section, summarize a theoretical workflow for approaching a soluti
 
 ![](chinookflow.png)
 
-Steps in the process:
-* Extract the data from the PDFs
-* Organize the data into a pandas dataframe (with appropriate data cleaning)
-* Split the data into strata by size of obligation
-* Topic Modeling by strata
-* Time-series analysis: Topics by year
-* Time-series analysis: Trace a few key words by year
+
 
 Notes:
 * This is not labeled data
