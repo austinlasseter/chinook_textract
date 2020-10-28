@@ -80,14 +80,24 @@ A benchmark model will include 10 topics. Evaluation metrics (described in the n
 There are multiple ways to evaluate an LDA topic model, and there are also several metrics to choose from. 
 
 * Topic Coherence scores a single topic by measuring the degree of semantic similarity between high scoring words in the topic. These measurements help distinguish between topics that are semantically interpretable topics and topics that are artifacts of statistical inference.
-* Silhouette score: Silhouette analysis can be used to study the separation distance between the resulting clusters. The silhouette plot displays a measure of how close each point in one cluster is to points in the neighboring clusters and thus provides a way to assess parameters like number of clusters visually. This measure has a range of -1 to  1]. The silhouette analysis is used to choose an optimal value for the number of topic clusters. 
-* Classification performance: Label the documents by the topics learned in LDA, and run a multi-class SVM classifier on the data set. The SVM training accuracy is your evaluation. Typically, accuracy or the F1-score would be good metrics of classification performance.
+```
+# Compute Coherence Score
+from gensim.models import CoherenceModel
+coherence_model_lda = CoherenceModel(model=lda_model, texts=data_lemmatized, dictionary=id2word, coherence='c_v')
+coherence_lda = coherence_model_lda.get_coherence()
+print('\nCoherence Score: ', coherence_lda)
+```
+
+* Silhouette score: Silhouette analysis can be used to study the separation distance between the resulting clusters. The silhouette plot displays a measure of how close each point in one cluster is to points in the neighboring clusters and thus provides a way to assess parameters like number of clusters visually. This measure has a range of -1 to  1]. The silhouette analysis is used to choose an optimal value for the number of topic clusters.
 
 ```
+# Compute silhouette score
 from sklearn.metrics import silhouette_samples, silhouette_score
 silhouette_avg = silhouette_score(X, cluster_labels)
 sample_silhouette_values = silhouette_samples(X, cluster_labels)
 ```
+
+* Classification performance: Label the documents by the topics learned in LDA, and run a multi-class SVM classifier on the data set. The SVM training accuracy is your evaluation. Typically, accuracy or the F1-score would be good metrics of classification performance.
 
 ### Project Design
 _(approx. 1 page)_
