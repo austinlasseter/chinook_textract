@@ -34,8 +34,7 @@ The original dataset is a series of PDF documents from the website of the US Arm
 
 Each page of the PDF documents includes a table of appropriations, followed by a description of the line-item. The key element from the table is "Total Obligation Authority," which represents the total amount of dollars budgeted to a line-item, spread across multiple fiscal years. Below is an example of a budget item from the 2019 J-Books (a Chinook helicopter). 
 
-<img src="chinook.png" alt="chinook" width="200"/>
-![](chinook.png)
+<img src="chinook.png" alt="chinook" width="500"/>
 
 Once the data has been extracted from the PDF's, it will be summarized in a pandas dataframe according to the following schema. 
 
