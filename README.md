@@ -38,11 +38,11 @@ Each page of the PDF documents includes a table of appropriations, followed by a
 
 Once the data has been extracted from the PDF's, it will be summarized in a pandas dataframe according to the following schema. 
 
-| Description | TOA Prior Years | FY 2019 | FY 2020 | FY 2021 | FY 2022 | FY 2023 | FY 2024 | FY 2025 |
-| - | - | - | - | - | - | - | - | - |
-| Text | $$ | $$ | $$ | $$ | $$ | $$ | $$ | $$ | $$ |
-| Text | $$ | $$ | $$ | $$ | $$ | $$ | $$ | $$ | $$ |
-| Text | $$ | $$ | $$ | $$ | $$ | $$ | $$ | $$ | $$ |
+| Line Item | Description | TOA Prior Years | FY 2019 | FY 2020 | FY 2021 | FY 2022 | FY 2023 | FY 2024 | FY 2025 |
+| - | - | - | - | - | - | - | - | - | - |
+| Text | Text | $$ | $$ | $$ | $$ | $$ | $$ | $$ | $$ | $$ |
+| Text | Text | $$ | $$ | $$ | $$ | $$ | $$ | $$ | $$ | $$ |
+| Text | Text | $$ | $$ | $$ | $$ | $$ | $$ | $$ | $$ | $$ |
 
 
 ### Solution Statement
