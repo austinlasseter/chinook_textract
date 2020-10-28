@@ -106,24 +106,37 @@ print(classification_report(y_true, y_pred, target_names=target_names))
 ```
 
 ### Project Design
-_(approx. 1 page)_
 
-In this final section, summarize a theoretical workflow for approaching a solution given the problem. Provide thorough discussion for what strategies you may consider employing, what analysis of the data might be required before being used, or which algorithms will be considered for your implementation. The workflow and discussion that you provide should align with the qualities of the previous sections. Additionally, you are encouraged to include small visualizations, pseudocode, or diagrams to aid in describing the project design, but it is not required. The discussion should clearly outline your intended workflow of the capstone project.
+The project will involve the following 5 steps: 
+1. Extract the data from the PDFs
+2. Organize the data into a pandas dataframe (with appropriate data cleaning)
+3. Split the data into strata by size of obligation
+4. Modeling: Topic Modeling & Time-series analysis
+5. Visualize results in a dashboard
 
+Here's a diagram of the proposed project design:
 ![](chinookflow.png)
 
+**1. Extract the data from the PDFs**
+* Upload the PDFs to an Amazon S3 bucket
+* Use Amazon Textract to extract the data from the PDFs and store as a json file on S3
 
+2. Organize the data into a pandas dataframe (with appropriate data cleaning)
+* Use Amazon SageMaker to convert the json to a pandas dataframe, and conduct data cleaning
+* Save the completed dataframe as a csv file in Amazon S3 bucket
 
-Notes:
-* This is not labeled data
+3. Split the data into strata by size of obligation
+* Use pandas with SageMaker to conduct EDA, including strata by obligation
+* Save results to S3
 
+4. Modeling: Topic Modeling & Time-series analysis
+* Amazon SageMaker NTM is an unsupervised learning algorithm that is used to organize a corpus of documents into topics that contain word groupings based on their statistical distribution. 
+* Save results as a SageMaker endpoint
 
------------
+5. Visualize results in a dashboard
+* Expose the SageMaker endpoint via a Lambda function and connect to API Gateway
+* Create another endpoint from API Gateway to expose the ML results
+* Create a simple dashboard using a Python Flask application (probably with Plotly Dash)
+* Deploy the dashboard using AWS Elastic Beanstalk, connect to the API Gateway endpoint, and expose the URL
 
-**Before submitting your proposal, ask yourself. . .**
-
-- Does the proposal you have written follow a well-organized structure similar to that of the project template?
-- Is each section (particularly **Solution Statement** and **Project Design**) written in a clear, concise and specific fashion? Are there any ambiguous terms or phrases that need clarification?
-- Would the intended audience of your project be able to understand your proposal?
-- Have you properly proofread your proposal to assure there are minimal grammatical and spelling mistakes?
-- Are all the resources used for this project correctly cited and referenced?
+As a final step in the project, I will make the dashboard available to users so that they can explore the results of the topic modeling on their own.
