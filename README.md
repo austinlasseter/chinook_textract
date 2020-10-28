@@ -71,6 +71,8 @@ It's common to visualize the LDA topics for interpretability using a  popular vi
 
 Exploring the Intertopic Distance Plot using `pyLDAvis` can help the user learn about how topics relate to each other, including potential higher-level structure between groups of topics.
 
+<img src="pylDavis.png" alt="pyLDAvis" width="500"/>
+
 ### Evaluation Metrics
 _(approx. 1-2 paragraphs)_
 
