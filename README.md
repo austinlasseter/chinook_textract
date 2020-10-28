@@ -121,22 +121,22 @@ Here's a diagram of the proposed project design:
 * Upload the PDFs to an Amazon S3 bucket
 * Use Amazon Textract to extract the data from the PDFs and store as a json file on S3
 
-2. Organize the data into a pandas dataframe (with appropriate data cleaning)
+**2. Organize the data into a pandas dataframe (with appropriate data cleaning)**
 * Use Amazon SageMaker to convert the json to a pandas dataframe, and conduct data cleaning
 * Save the completed dataframe as a csv file in Amazon S3 bucket
 
-3. Split the data into strata by size of obligation
+**3. Split the data into strata by size of obligation**
 * Use pandas with SageMaker to conduct EDA, including strata by obligation
 * Save results to S3
 
-4. Modeling: Topic Modeling & Time-series analysis
+**4. Modeling: Topic Modeling & Time-series analysis**
 * Amazon SageMaker NTM is an unsupervised learning algorithm that is used to organize a corpus of documents into topics that contain word groupings based on their statistical distribution. 
 * Save results as a SageMaker endpoint
 
-5. Visualize results in a dashboard
+**5. Visualize results in a dashboard**
 * Expose the SageMaker endpoint via a Lambda function and connect to API Gateway
 * Create another endpoint from API Gateway to expose the ML results
 * Create a simple dashboard using a Python Flask application (probably with Plotly Dash)
 * Deploy the dashboard using AWS Elastic Beanstalk, connect to the API Gateway endpoint, and expose the URL
 
-As a final step in the project, I will make the dashboard available to users so that they can explore the results of the topic modeling on their own.
+As a final step in the project, I will make the dashboard available to users so that they can explore the results of the topic modeling on their own. Here is an example of a similar dashboard from a previous project: https://knn-iris-classifier.herokuapp.com/
