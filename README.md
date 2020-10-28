@@ -59,9 +59,17 @@ Steps in the analytic process leading up to the solution:
   * Time-series analysis: Trace a few key words by year
 * Visualize results in a dashboard
 
-### Benchmark Model
+### Benchmark Model: Latent Dirichlet Allocation (LDA)
 
 Topic modelling refers to the task of identifying topics that best describes a set of documents. These topics will only emerge during the topic modelling process (therefore called latent). And one popular topic modelling technique is known as Latent Dirichlet Allocation (LDA). LDA imagines a fixed set of topics. Each topic represents a set of words. The goal of LDA is to map all the documents to the topics in a such a way that the words in each document are mostly captured by those imaginary topics. 
+
+LDA is based on word frequencies and topics distribution in texts. To put it simply, this method counts words in a given data set and groups them based on their co-occurrence into topics. Then the percentage distribution of topics in each document is calculated.
+
+It's common to visualize the LDA topics for interpretability using a  popular visualization package, `pyLDAvis` which is designed to help interactively with:
+* Better understanding and interpreting individual topics, and
+* Better understanding the relationships between the topics.
+
+Exploring the Intertopic Distance Plot using `pyLDAvis` can help the user learn about how topics relate to each other, including potential higher-level structure between groups of topics.
 
 ### Evaluation Metrics
 _(approx. 1-2 paragraphs)_
